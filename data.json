@@ -5,7 +5,7 @@
             "author": "qwer",
             "isbn": "1234",
             "category": "jk;",
-            "quantity": 3
+            "quantity": 5
         },
         {
             "title": "rich dad poor dad",
@@ -67,6 +67,16 @@
             "memberID": "5678",
             "isbn": "1234",
             "action": "issue"
+        },
+        {
+            "memberID": "9876",
+            "isbn": "1234",
+            "action": "return"
+        },
+        {
+            "memberID": "9876",
+            "isbn": "1234",
+            "action": "return"
         }
     ]
 }

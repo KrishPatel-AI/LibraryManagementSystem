@@ -136,6 +136,16 @@ class Library:
 
 
     def return_book(self, memberID, isbn ):
+        member_exists = False
+        for member in self.data["members"]:
+            if member["memberID"] == memberID:
+                member_exists = True
+                break
+        if not member_exists:
+            print("Member not found.")
+            return
+
+
         for book in self.data["books"]:
 
             if book["isbn"] == isbn:
