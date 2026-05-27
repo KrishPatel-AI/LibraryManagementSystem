@@ -102,7 +102,11 @@ class Library:
             ):
                 found = True
                 print("\nFound Book")
-                print(book)
+                print("Title:" + book["title"])
+                print("Author:" + book["author"])
+                print("ISBN:" + book["isbn"])
+                print("Category:" + book["category"])
+                print("Quantity:" , book["quantity"])
 
         if not found:
             print("No matching books found")

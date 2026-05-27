@@ -1,0 +1,13 @@
+{
+    "books": [
+        {
+            "title": "Rich Dad Poor Dad",
+            "author": "Krish Patel",
+            "isbn": "1234",
+            "category": "Finance",
+            "quantity": 5
+        }
+    ],
+    "members": [],
+    "transactions": []
+}
