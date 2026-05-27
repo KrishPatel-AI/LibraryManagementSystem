@@ -6,7 +6,7 @@ from allclasses import Transaction
 
 class Library:
     def __init__(self):
-        self.file_name ="data.json"
+        self.file_name = os.path.join(os.path.dirname(__file__), "data.json")
 
         if not os.path.exists(self.file_name):
             self.data = {
