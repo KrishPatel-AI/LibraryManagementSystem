@@ -45,6 +45,11 @@ class Library:
 
 
     def add_book(self, book):
+        for book_existed in self.data["books"]:
+            if book_existed["isbn"] == book.isbn:
+                print("Book ISBN already exists")
+                return
+
         self.data["books"].append(book.to_dict())
         self.save_data()
         print("Book Added")
