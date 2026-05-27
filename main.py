@@ -26,6 +26,10 @@ while True:
         category = input ("Enter Book Category: ")
         try:
             quantity = int(input("Enter Quantity: "))
+            if quantity <0:
+                print("Please enter a positive integer")
+                continue
+
         except ValueError:
             print("Enter a valid quantity")
             continue
