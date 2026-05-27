@@ -59,6 +59,11 @@ class Library:
 
 
     def register_member(self, member):
+        for member_existed in self.data["members"]:
+            if member_existed["memberID"] == member.memberID:
+                print("Member ID already Existed")
+                return
+
         self.data["members"].append(member.to_dict())
         self.save_data()
         print("Member Registered")
