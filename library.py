@@ -203,4 +203,8 @@ class Library:
             return
 
         for transaction in self.data["transactions"]:
-            print(transaction)
+            print("Member ID:", transaction["memberID"])
+            print("ISBN:", transaction["isbn"])
+            print("Action", transaction["action"])
+
+            print()
