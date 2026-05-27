@@ -145,6 +145,23 @@ class Library:
             print("Member not found.")
             return
 
+        issue_count = 0
+        return_count = 0
+
+        for transaction in self.data["transactions"]:
+            if (
+                transaction["memberID"] == memberID
+                and transaction["isbn"] == isbn
+            ):
+                if transaction["action"] == "issue":
+                    issue_count += 1
+
+                elif transaction["action"] == "return":
+                    return_count += 1
+        if issue_count <= return_count:
+            print("Member did not issue this book.")
+            return
+
 
         for book in self.data["books"]:
 
