@@ -6,8 +6,23 @@
             "isbn": "1234",
             "category": "Finance",
             "quantity": 5
+        },
+        {
+            "title": "asdf",
+            "author": "asd",
+            "isbn": "f",
+            "category": "asdf",
+            "quantity": 2
         }
     ],
-    "members": [],
+    "members": [
+        {
+            "name": "asdf",
+            "email": "asdf",
+            "memberID": "asdf",
+            "type": "premium",
+            "premium": "no"
+        }
+    ],
     "transactions": []
 }

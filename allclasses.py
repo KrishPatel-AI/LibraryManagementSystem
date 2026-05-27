@@ -1,4 +1,4 @@
-#allclasses.py
+import datetime
 
 class Book:
     def __init__(self, title, author, isbn, category, quantity):
@@ -51,10 +51,12 @@ class Transaction:
         self.memberID = memberID
         self.isbn = isbn
         self.action = action
+        self.date = datetime.datetime.now().isoformat()
 
     def to_dict(self):
         return {
             "memberID": self.memberID,
             "isbn": self.isbn,
-            "action": self.action
+            "action": self.action,
+            "date": self.date
         }

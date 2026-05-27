@@ -2,6 +2,7 @@
 
 from library import Library
 from allclasses import Book, Member, PremiumMember
+import re
 
 library = Library()
 
@@ -20,10 +21,30 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        title = input("Enter Book Title: ")
-        author = input("Enter Book Author: ")
-        isbn = input("Enter Book ISBN: ")
-        category = input ("Enter Book Category: ")
+        title = input("Enter Book Title: ").strip()
+        if title == "":
+            print("Title cannot be empty")
+            continue
+
+        author = input("Enter Book Author: ").strip()
+        if author == "":
+            print("Author cannot be empty")
+            continue
+
+        isbn = input("Enter Book ISBN: ").strip()
+        if isbn == "":
+            print("ISBN cannot be empty")
+            continue
+
+        if not int(isbn):
+            print("ISBN must be valid")
+
+
+        category = input ("Enter Book Category: ").strip()
+        if category == "":
+            print("Category cannot be empty")
+            continue
+
         try:
             quantity = int(input("Enter Quantity: "))
             if quantity <0:
@@ -39,10 +60,30 @@ while True:
         library.add_book(book)
 
     elif choice == "2":
-        name = input("Enter Member name:")
-        email = input("Enter Member email:")
-        memberID = input("Enter Member ID:")
-        member_type  = input ("Premium Member (yes or no):")
+        name = input("Enter Member name:").strip()
+        if name == "":
+            print("Member name cannot be empty")
+            continue
+
+        email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+
+        email = input("Enter Member email:").strip()
+        if email == "":
+            print("Member email cannot be empty")
+            continue
+        if not re.match(email_pattern, email):
+            print("Enter valid email")
+            continue
+
+        memberID = input("Enter Member ID:").strip()
+        if memberID == "":
+            print("Member ID cannot be empty")
+            continue
+
+        member_type  = input ("Premium Member (yes or no):").strip()
+        if member_type == "":
+            print("Member type cannot be empty")
+            continue
 
         if member_type.lower() == "yes":
             level = input("Enter premium level:")
