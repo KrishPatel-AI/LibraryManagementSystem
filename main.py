@@ -82,18 +82,20 @@ def main():
                 print("Member ID cannot be empty")
                 continue
 
-            member_type  = input ("Premium Member (yes or no):").strip()
+            member_type  = input ("Member Type (normal/premium): ").strip().lower()
             if member_type == "":
                 print("Member type cannot be empty")
                 continue
 
-            if member_type.lower() == "yes":
-                level = input("Enter premium level:")
+            if member_type == "premium":
+                member = PremiumMember(name, email, memberID)
 
-                member = PremiumMember(name, email, memberID, level)
+            elif member_type == "normal":
+                member = Member(name, email, memberID)
 
             else:
-                member = Member(name, email, memberID)
+                print("Enter either normal or premium")
+                continue
 
             library.register_member(member)
 

@@ -11,7 +11,7 @@ class Library:
         if not os.path.exists(self.file_name):
             self.data = {
                 "books":[],
-                "members":[],
+                # "members":[],
                 "transactions":[]
             }
             self.save_data()
@@ -117,15 +117,36 @@ class Library:
 
 
     def issue_book(self, memberID, isbn):
-        member_exists = False
+        member_data = None
         for member in self.data["members"]:
             if member["memberID"] == memberID:
-                member_exists = True
+                member_data = member
                 break
 
-        if not member_exists:
+        if member_data is None:
                 print("Member not found.")
                 return
+
+        issue_count = 0
+        return_count = 0
+
+        for transaction in self.data["transactions"]:
+            if transaction["memberID"] == memberID:
+                if transaction["action"] == "issue":
+                    issue_count += 1
+                elif transaction["action"] == "return":
+                    return_count += 1
+
+        borrowed_books = issue_count - return_count
+
+        if member_data["type"] == "premium":
+            max_limit = 10
+        else:
+            max_limit = 3
+
+        if borrowed_books >= max_limit:
+            print("Borrow limit reached")
+            return
 
         for book in self.data["books"]:
              if book["isbn"] == isbn:

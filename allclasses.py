@@ -32,9 +32,9 @@ class Member:
         }
 
 class PremiumMember(Member):
-    def __init__(self, name, email, memberID, premium):
+    def __init__(self, name, email, memberID):
         super().__init__(name, email, memberID)
-        self.premium = premium
+
 
     def to_dict(self):
         return {
@@ -42,7 +42,6 @@ class PremiumMember(Member):
             "email": self.email,
             "memberID": self.memberID,
             "type": "premium",
-            "premium": self.premium
 
         }
 

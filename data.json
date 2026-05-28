@@ -1,0 +1,83 @@
+{
+    "books": [
+        {
+            "title": "Rich Dad Poor Dad",
+            "author": "Krish Patel",
+            "isbn": "1234",
+            "category": "Finance",
+            "quantity": 4
+        },
+        {
+            "title": "Epic Money",
+            "author": "Ankur Warikoo",
+            "isbn": "5678",
+            "category": "Finance",
+            "quantity": 10
+        },
+        {
+            "title": "Gita",
+            "author": "Krishna",
+            "isbn": "1111",
+            "category": "Spiritual",
+            "quantity": 48
+        }
+    ],
+    "members": [
+        {
+            "name": "Ram",
+            "email": "ram@gmail.com",
+            "memberID": "0147",
+            "type": "normal"
+        },
+        {
+            "name": "Sachin",
+            "email": "sachin@gmail.com",
+            "memberID": "0258",
+            "type": "premium"
+        },
+        {
+            "name": "Krish",
+            "email": "krish@gmail.com",
+            "memberID": "0369",
+            "type": "normal"
+        },
+        {
+            "name": "0147",
+            "email": "0147@gmail.com",
+            "memberID": "0123",
+            "type": "premium"
+        }
+    ],
+    "transactions": [
+        {
+            "memberID": "0147",
+            "isbn": "1111",
+            "action": "issue",
+            "date": "2026-05-28T12:12:45.323217"
+        },
+        {
+            "memberID": "0147",
+            "isbn": "5678",
+            "action": "issue",
+            "date": "2026-05-28T12:12:52.691591"
+        },
+        {
+            "memberID": "0147",
+            "isbn": "1234",
+            "action": "issue",
+            "date": "2026-05-28T12:13:27.612427"
+        },
+        {
+            "memberID": "0147",
+            "isbn": "5678",
+            "action": "return",
+            "date": "2026-05-28T12:13:54.829162"
+        },
+        {
+            "memberID": "0147",
+            "isbn": "1111",
+            "action": "issue",
+            "date": "2026-05-28T12:14:06.274340"
+        }
+    ]
+}
